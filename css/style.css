@@ -1,3 +1,7 @@
 .test {
   backgrund-color: #FFF;
 }
+
+:local(.blue) {
+  color: blue;
+}
