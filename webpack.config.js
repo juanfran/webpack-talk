@@ -9,6 +9,13 @@ module.exports = {
   },
   watch: true,
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.js$/,
@@ -16,5 +23,8 @@ module.exports = {
         loader: 'babel'
       }
     ]
+  },
+  eslint: {
+    configFile: '.eslintrc'
   }
 };
