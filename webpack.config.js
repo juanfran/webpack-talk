@@ -1,8 +1,10 @@
+var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./js/app.js"
+    app: "./js/app.js",
+    vendor: ["jquery", "lodash"]
   },
   output: {
     path: "dist",
@@ -34,10 +36,7 @@ module.exports = {
     configFile: '.eslintrc'
   },
   plugins: [
-    new ExtractTextPlugin("[name].css")
-    // all css files
-    // new ExtractTextPlugin("style.css", {
-    //   allChunks: true
-    // })
+    new ExtractTextPlugin("[name].css"),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js")
   ]
 };
