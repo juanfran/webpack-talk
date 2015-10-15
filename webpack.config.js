@@ -1,3 +1,5 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
   entry: {
     app: "./js/app.js"
@@ -24,11 +26,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader!postcss-loader"
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader")
       }
     ]
   },
   eslint: {
     configFile: '.eslintrc'
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin("[name].css")
+    // all css files
+    // new ExtractTextPlugin("style.css", {
+    //   allChunks: true
+    // })
+  ]
 };

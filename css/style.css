@@ -1,5 +1,5 @@
-.test {
-  backgrund-color: #FFF;
+body {
+  background-color: #f0f0f0;
 }
 
 :local(.blue) {
