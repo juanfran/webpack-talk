@@ -35,6 +35,7 @@ module.exports = {
   eslint: {
     configFile: '.eslintrc'
   },
+  devtool: "cheap-module-eval-source-map",
   plugins: [
     new ExtractTextPlugin("[name].css"),
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js")
