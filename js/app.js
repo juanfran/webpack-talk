@@ -1,3 +1,3 @@
-var test = require('./test');
+import * as test from './test';
 
 test.sayHi();

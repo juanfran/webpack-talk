@@ -7,5 +7,14 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/statics/"
   },
-  watch: true
+  watch: true,
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      }
+    ]
+  }
 };

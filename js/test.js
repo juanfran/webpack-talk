@@ -1,5 +1,9 @@
-module.exports = {
-  sayHi: function() {
-    console.log('hello');
+let sayHi = () => {
+  console.log('hello');
+};
+
+export default {
+  sayHi: () => {
+    sayHi();
   }
 };
